@@ -6,7 +6,6 @@
  *                                                                                                *
  ************************************************************************************************ */
 
-
 /**
  * Returns the 'Fizz','Buzz' or an original number using the following rules:
  * 1) return original number
@@ -38,7 +37,6 @@ function getFizzBuzz(num) {
   return str === '' ? num : str;
 }
 
-
 /**
  * Returns the factorial of the specified integer n.
  *
@@ -56,7 +54,6 @@ function getFactorial(n) {
   }
   return n * getFactorial(n - 1);
 }
-
 
 /**
  * Returns the sum of integer numbers between n1 and n2 (inclusive).
@@ -78,7 +75,6 @@ function getSumBetweenNumbers(n1, n2) {
   return sum;
 }
 
-
 /**
  * Returns true, if a triangle can be built with the specified sides a, b, c
  * and false in any other ways.
@@ -97,7 +93,6 @@ function getSumBetweenNumbers(n1, n2) {
 function isTriangle(a, b, c) {
   return a + b > c && a + c > b && b + c > a;
 }
-
 
 /**
  * Returns true, if two specified axis-aligned rectangles overlap, otherwise false.
@@ -138,7 +133,6 @@ function doRectanglesOverlap(rect1, rect2) {
       && rect1.left >= rect2.left && rect1.left <= rect2.left + rect2.width);
 }
 
-
 /**
  * Returns true, if point lies inside the circle, otherwise false.
  * Circle is an object of
@@ -169,7 +163,6 @@ function isInsideCircle(circle, point) {
   return (point.x - circle.center.x) ** 2 + (point.y - circle.center.y) ** 2 < circle.radius ** 2;
 }
 
-
 /**
  * Returns the first non repeated char in the specified strings otherwise returns null.
  *
@@ -189,7 +182,6 @@ function findFirstSingleChar(str) {
   }
   return null;
 }
-
 
 /**
  * Returns the string representation of math interval,
@@ -218,7 +210,6 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
   + (isEndIncluded ? ']' : ')');
 }
 
-
 /**
  * Reverse the specified string (put all chars in reverse order)
  *
@@ -235,7 +226,6 @@ function reverseString(str) {
   return str.split('').reverse().join('');
 }
 
-
 /**
  * Reverse the specified integer number (put all digits in reverse order)
  *
@@ -251,7 +241,6 @@ function reverseString(str) {
 function reverseInteger(num) {
   return Number(String(num).split('').reverse().join(''));
 }
-
 
 /**
  * Validates the CCN (credit card number) and return true if CCN is valid
@@ -306,7 +295,6 @@ function getDigitalRoot(num) {
   return getDigitalRoot(String(num).split('').reduce((agg, item) => agg + Number(item), 0));
 }
 
-
 /**
  * Returns true if the specified string has the balanced brackets and false otherwise.
  * Balanced means that is, whether it consists entirely of pairs of opening/closing brackets
@@ -330,10 +318,10 @@ function getDigitalRoot(num) {
  */
 function isBracketsBalanced(str) {
   let oldLen = str.length;
-  let newStr = str.replaceAll(/\[\]|\(\)|{}|<>/g, '');
+  let newStr = str.replace(/\[\]|\(\)|{}|<>/g, '');
   while (newStr.length < oldLen) {
     oldLen = newStr.length;
-    newStr = newStr.replaceAll(/\[\]|\(\)|{}|<>/g, '');
+    newStr = newStr.replace(/\[\]|\(\)|{}|<>/g, '');
   }
   return newStr === '';
 }
@@ -362,7 +350,6 @@ function toNaryString(num, n) {
   return num.toString(n);
 }
 
-
 /**
  * Returns the common directory path for specified array of full filenames.
  *
@@ -387,7 +374,6 @@ function getCommonDirectoryPath(pathes) {
   }
   return arrResult.length === 0 ? '' : `${arrResult.join('/')}/`;
 }
-
 
 /**
  * Returns the product of two specified matrixes.
@@ -423,7 +409,6 @@ function getMatrixProduct(m1, m2) {
   }
   return m;
 }
-
 
 /**
  * Returns the evaluation of the specified tic-tac-toe position.
@@ -480,7 +465,6 @@ function evaluateTicTacToePosition(position) {
   }
   return undefined;
 }
-
 
 module.exports = {
   getFizzBuzz,

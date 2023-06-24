@@ -26,7 +26,6 @@ function Rectangle(width, height) {
   this.getArea = () => this.width * this.height;
 }
 
-
 /**
  * Returns the JSON representation of specified object
  *
@@ -40,7 +39,6 @@ function Rectangle(width, height) {
 function getJSON(obj) {
   return JSON.stringify(obj);
 }
-
 
 /**
  * Returns the object of specified type from JSON representation
@@ -59,7 +57,6 @@ function fromJSON(proto, json) {
   Object.assign(obj, JSON.parse(json));
   return obj;
 }
-
 
 /**
  * Css selectors builder
@@ -148,7 +145,7 @@ function ComplexCssSelector(value, type) {
   this.order = ['element', 'id', 'class', 'attr', 'pseudoClass', 'pseudoElement'];
 
   this.add = (val, t) => {
-    const lastType = this.selectors.at(-1).type;
+    const lastType = this.selectors[this.selectors.length - 1].type;
     if (this.order.indexOf(lastType) > this.order.indexOf(t)) {
       throw new Error(this.wrongOrder);
     }
@@ -157,7 +154,7 @@ function ComplexCssSelector(value, type) {
   };
 
   this.element = () => {
-    const lastType = this.selectors.at(-1).type;
+    const lastType = this.selectors[this.selectors.length - 1].type;
     if (lastType === 'element') {
       throw new Error(this.doubleSelectors);
     } else {
@@ -228,7 +225,6 @@ const cssSelectorBuilder = {
     return new CombineCssSelector(selector1, combinator, selector2);
   },
 };
-
 
 module.exports = {
   Rectangle,

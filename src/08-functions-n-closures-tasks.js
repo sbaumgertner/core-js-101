@@ -8,7 +8,6 @@
  *                                                                                             *
  ********************************************************************************************* */
 
-
 /**
  * Returns the functions composition of two specified functions f(x) and g(x).
  * The result of compose is to be a function of one argument, (lets call the argument x),
@@ -26,7 +25,6 @@
 function getComposition(f, g) {
   return (x) => f(g(x));
 }
-
 
 /**
  * Returns the math power function with the specified exponent
@@ -47,7 +45,6 @@ function getComposition(f, g) {
 function getPowerFunction(exponent) {
   return (x) => x ** exponent;
 }
-
 
 /**
  * Returns the polynom function of one argument based on specified coefficients.
@@ -73,7 +70,6 @@ function getPolynom(...arg) {
   };
 }
 
-
 /**
  * Memoizes passed function and returns function
  * which invoked first time calls the passed function and then always returns cached result.
@@ -97,7 +93,6 @@ function memoize(func) {
     return result;
   };
 }
-
 
 /**
  * Returns the function trying to call the passed function and if it throws,
@@ -127,7 +122,6 @@ function retry(func, attempts) {
     return null;
   };
 }
-
 
 /**
  * Returns the logging wrapper for the specified method,
@@ -162,7 +156,6 @@ function logger(func, logFunc) {
   };
 }
 
-
 /**
  * Return the function with partial applied arguments
  *
@@ -179,7 +172,6 @@ function logger(func, logFunc) {
 function partialUsingArguments(fn, ...args1) {
   return (...args2) => fn(...args1.concat(args2));
 }
-
 
 /**
  * Returns the id generator function that returns next integer starting
@@ -205,7 +197,6 @@ function getIdGeneratorFunction(startFrom) {
     return next - 1;
   };
 }
-
 
 module.exports = {
   getComposition,
